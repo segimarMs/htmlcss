@@ -1,0 +1,107 @@
+/* COMMON */
+body {
+    color: #333;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.4;
+    font-family: 'Nanum Gothic', sans-serif; 
+}
+/* img경우 inline 요소로 baseline을 가진다 이미지하단 공백(baseline) 제거 */
+img{
+    display: block;
+}
+/* HEADER */
+header {
+    background-color: #f6f5f0;
+    border-bottom: 1px solid #c8c8c8;
+}
+a {
+    text-decoration: none;
+}
+/* 가운데 영역을 유지하기 위한 부분 */
+header .inner{
+    width: 1100px;
+    height: 120px;
+    margin: 0 auto;
+    position: relative;
+}
+header .logo {
+    width: 75px;
+    height: 75px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left:0;
+    margin: auto;
+}
+header .sub-menu {
+    display: flex;
+    position: absolute;
+    top: 10px;
+    right: 0;
+}
+/* 정확한 부분만 적용을 위해 자식을 찾아 명시 */
+header .sub-menu ul.menu {
+    font-family: Arial, sans-serif;
+    display: flex;
+}   
+header .sub-menu ul.menu li {
+    position: relative;
+}
+header .sub-menu ul.menu li::before {
+    content:"";
+    display: block;
+    width: 1px;
+    height: 12px;
+    background-color: #e5e5e5;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+header .sub-menu ul.menu li:first-child:before {
+    display: none;
+}
+
+header .sub-menu ul.menu li a {
+    font-size: 12px;
+    padding: 11px 16px;
+    display: block;
+    color: #656565;
+}
+header .sub-menu ul.menu li a:hover {
+    color: #000;
+}
+header .sub-menu .search {
+    height: 34px;
+    position: relative;
+}
+header .sub-menu .search input{
+    width: 36px;
+    height: 34px;
+    padding: 4px 10px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 5px;
+    outline: none;
+    background-color: #fff;
+    color: #777;
+    transition: width .4s;
+    font-size:12px;
+}
+header .sub-menu .search input:focus {
+    width: 190px;
+    border-color: #669900;
+}
+header .sub-menu .search .material-icons{
+    height: 24px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 5px;
+    margin: auto;
+    transition: all .8s;
+}
+header .sub-menu .search.focused .material-icons{
+    opacity: 0;
+}
