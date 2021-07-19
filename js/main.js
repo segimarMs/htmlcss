@@ -15,3 +15,25 @@ searchInputEl.addEventListener('blur', function () {
     searchInputEl.setAttribute('placeholder', '');
 });
 
+const badgeEl = document.querySelector('header .badges');
+
+//throttle  시간제한을 두고 제한을 둠.
+window.addEventListener("scroll", _.throttle(
+    function(){
+         console.log(window.scrollY);
+         if(window.scrollY > 500 ){
+            //배지 숨기기
+            gsap.to(badgeEl, .6, { 
+                opacity: 0,
+                display:"none"
+            });
+         }else{
+             //배지 보이기
+             gsap.to(badgeEl, .6, { 
+                opacity: 1,
+                display:"block"
+            });
+           
+         }
+    },300)
+);
